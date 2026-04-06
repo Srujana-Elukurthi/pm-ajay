@@ -1,0 +1,84 @@
+PM AJAY Dashboard Backend Architecture and Workflow Overview
+
+This document explains how the DarshanGo backend works how it processes requests manages data and connects with external services.
+
+1 Technology Stack
+
+Runtime Environment is Node.js
+Framework used is Express.js for handling HTTP requests and routing
+Programming Language is TypeScript for better type safety and maintainability
+Database used is Supabase with PostgreSQL
+The project has migrated from Firebase Firestore to Supabase for relational database management
+Authentication is handled using JWT and Supabase Auth
+File storage is managed using Supabase Storage for documents and inspection photos
+External integration is done using n8n for the AI Chat Assistant
+
+2 Architecture Pattern
+
+The backend follows a modular layered architecture. Each feature such as projects agencies and funds is kept in a separate module. Every module contains
+
+Routes files which define the API endpoints
+Controller files which handle request and response logic
+Service files which contain business logic and database operations
+Interfaces and DTOs which define the data structure for type safety
+
+Directory Structure Overview
+
+src folder contains
+modules folder for all features like authentication projects agencies funds inspections and chat
+middleware folder for authentication error handling and logging
+utils folder for helper functions such as response formatting
+app.ts file as the main application entry point
+
+3 Key Workflows
+
+A Request Processing Flow
+
+Frontend sends a request such as creating a project
+Request enters through server.ts and then app.ts
+Global middleware like CORS and Helmet runs
+Routing sends the request to the related module route file
+Authentication middleware verifies the JWT token and user role
+Controller receives the request and validates input
+Service validates business rules and interacts with Supabase
+Controller sends the final JSON response back to the frontend
+
+B AI Chat Assistant Flow
+
+User types a message in the frontend chat box
+Frontend sends the request to the backend chat API
+Chat controller receives the request
+Message and session ID are forwarded to the n8n webhook
+n8n processes the request using AI and generates a reply
+Reply is sent back to the backend
+Backend forwards the reply to the frontend
+
+C Fund Flow Tracking
+
+When funds are released a record is created in the funds table
+Each fund record is linked to a specific project and agency
+Backend calculates total utilized and total sanctioned amounts
+These values are displayed on the dashboard as KPIs
+
+4 Security Measures
+
+JWT authentication is used for secure stateless login
+Role based access control is implemented
+
+Admin can manage users agencies and all projects
+Nodal Officer can view and update projects in their area
+Agency can view assigned projects and upload utilization certificates
+
+Input validation is done using Zod schemas
+Helmet is used for secure HTTP headers
+CORS is configured to allow only trusted frontend domains
+
+5 Database Schema Supabase
+
+Users table contains id email role and district
+Projects table contains id name budget status and agency id
+Agencies table contains id name type and registration number
+Funds table contains id project id amount type and date
+Inspections table contains id project id officer name report and photos
+
+This backend architecture ensures secure scalable and maintainable operation of the PM AJAY Central Monitoring System.

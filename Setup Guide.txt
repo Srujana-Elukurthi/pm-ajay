@@ -1,0 +1,97 @@
+DarshanGo Setup Guide
+
+This guide explains how to set up and run the DarshanGo project which has a React frontend and a Node.js Express backend using Supabase.
+
+Prerequisites
+
+You must have the following installed
+Node.js version 18 or higher
+npm which comes with Node.js
+A Supabase account with a project created
+
+1 Backend Setup darshango backend
+
+The backend handles API requests authentication and database operations.
+
+Step 1 Install Backend Dependencies
+
+Open terminal and go to the backend folder
+
+cd darshango-backend
+npm install
+
+Step 2 Backend Environment Configuration
+
+Create a file named .env inside the darshango-backend folder and add the following values
+
+PORT=5000
+NODE_ENV=development
+JWT_SECRET=your_super_secret_jwt_key
+SUPABASE_URL=https://your-project-url.supabase.co
+
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+
+Use the service role key from Supabase and not the anon key.
+
+Step 3 Database Setup
+
+Open your Supabase dashboard
+Go to SQL Editor
+Open the migrations folder inside darshango-backend
+Copy the SQL files and run them in the SQL Editor
+This will create all required tables like users projects funds and others
+
+Step 4 Run the Backend Server
+
+Start the backend using
+
+npm run dev
+
+The backend will run on
+http://localhost:5000
+
+2 Frontend Setup frontend
+
+The frontend is built using React Vite and Tailwind CSS.
+
+Step 1 Install Frontend Dependencies
+
+Open a new terminal and go to the frontend folder
+
+cd frontend
+npm install
+
+Step 2 Frontend Environment Configuration
+
+Create a file named .env inside the frontend folder and add
+
+VITE_API_URL=http://localhost:5000/api/v1
+
+This connects the frontend to the backend API.
+
+Step 3 Run the Frontend Server
+
+Start the frontend using
+
+npm run dev
+
+The frontend will run on
+http://localhost:3000
+
+3 Running the Full Application
+
+Start the backend first
+npm run dev in darshango-backend
+
+Then start the frontend
+npm run dev in frontend
+
+Open your browser and visit
+http://localhost:3000
+
+Troubleshooting
+
+If database tables are missing run the SQL migration files again in Supabase
+If connection is refused check that backend is running on port 5000
+If API is not working confirm that VITE_API_URL is correct
+For login issues verify JWT_SECRET and Supabase keys

@@ -1,0 +1,123 @@
+PM AJAY Dashboard User Guide and Workflow
+
+This guide explains how to use the PM AJAY Central Monitoring System Dashboard to manage projects agencies funds and inspections.
+
+1 Getting Started
+
+Login Procedure
+
+Open the dashboard login page
+Enter your email and password
+Click on login
+
+Default Admin Login for testing
+Email admin@pmajay.com
+ Password admin123
+
+2 Dashboard Overview
+
+After login you will see the main dashboard
+
+You can view KPI cards showing
+Total projects
+Active agencies
+Total funds utilized
+Pending inspections
+
+You may also see the project map showing project locations
+Recent alerts showing delays fund issues and updates
+Quick actions to create projects and add agencies
+
+3 Project Management
+
+View Projects
+
+Click on Projects from the sidebar
+View all projects with their status budget and location
+Use filters to search by state district or status
+
+Create a New Project
+
+Click on New Project
+Enter project name location and sector
+Enter estimated cost and sanctioned budget
+Select start date and expected completion date
+Assign an implementing agency
+Click on Create Project
+
+Project Details and Tracking
+
+Click on any project to view details
+Check overview progress and financial summary
+Update milestones such as foundation laid or work completion
+Upload documents like approvals and technical files
+Use messages section for internal project communication
+
+4 Agency Management
+
+View Agencies
+
+Click on Agency Mapping
+View all registered agencies and their performance
+
+Add a New Agency
+
+Click on Add Agency
+Enter agency name registration number contact details and type
+Save the agency
+It will now be available for project assignment
+
+5 Fund Flow Tracking
+
+Global Fund Tracking
+
+Click on Fund Flow
+View overall fund movement from ministry to agencies
+Check transaction history of all disbursements and utilization
+
+Project Based Fund Tracking
+
+Open a project
+Go to the Funds tab
+Add new fund release or upload utilization certificate
+System automatically calculates utilization percentage
+
+6 Inspection and Monitoring
+
+View Inspections
+
+Click on Inspections
+View all scheduled and completed inspections
+
+Add an Inspection Report
+
+Select a project
+Click on Add Inspection
+Enter inspection date officer name observations and status
+Upload site images as proof
+Save the report
+
+7 Communication and Support
+
+AI Assistant Help
+
+Click on the Need Help button on the dashboard
+Type your question such as how to add a project
+The AI assistant will guide you
+
+Alerts and Notifications
+
+Check the alerts section on the dashboard
+View system warnings like delayed inspections or budget exceeded
+
+8 User Management Admin Only
+
+Click on Users if permitted
+Create user accounts for officials managers or agency staff
+Assign user roles like Admin Manager or Viewer
+
+Troubleshooting
+
+If login fails check your credentials
+If data is not loading check internet connection
+If problems continue use the help chat to report the issue
